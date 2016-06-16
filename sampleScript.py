@@ -1,3 +1,4 @@
+from utils.opensesame import OpenSesame
 # return a list of either fonts or paths
 for fop in OpenSesame.collect():
     f = OpenSesame.getFont(fop, showUI=False)
