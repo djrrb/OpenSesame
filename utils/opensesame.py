@@ -23,7 +23,7 @@ class OpenSesame:
         return paths
     
     @classmethod
-    def getFont(cls, f, showUI=False):
+    def getFont(cls, f, showInterface=False):
         """
         Given a font or the path of a font, return the font.
         """
@@ -37,7 +37,7 @@ class OpenSesame:
             for potentialFont in AllFonts():
                 if potentialFont.path is not None and potentialFont.path == f:
                     return potentialFont
-        return OpenFont(f, showUI=showUI)
+        return OpenFont(f, showInterface=showInterface)
     
     @classmethod
     def getPath(cls, f):
@@ -100,7 +100,7 @@ class OpenSesame:
 if __name__ == "__main__":
     # return a list of either fonts or paths
     for fop in OpenSesame.collect():
-        f = OpenSesame.getFont(fop, showUI=False)
+        f = OpenSesame.getFont(fop, showInterface=False)
         print('Working on %s...' %OpenSesame.getPath(fop))
         for g in f:
             print('\tDo something to', g)
