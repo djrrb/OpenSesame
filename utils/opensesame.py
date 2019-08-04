@@ -1,7 +1,7 @@
 import os
 from AppKit import NSAlert, NSAlertSecondButtonReturn, NSAlertFirstButtonReturn, NSAlertThirdButtonReturn
 from vanilla.dialogs import getFile, getFileOrFolder, putFile
-from robofab.world import CurrentFont, AllFonts, OpenFont
+# from fontparts import CurrentFont, AllFonts, OpenFont
 
 class OpenSesame:
     
@@ -12,7 +12,7 @@ class OpenSesame:
         """
         if not srcs:
             src = getFileOrFolder('Where are the UFOs?', allowsMultipleSelection=False)[0]
-        print src
+        print(src)
 
         paths = []
         for root, dirs, files in os.walk(src):
@@ -101,9 +101,9 @@ if __name__ == "__main__":
     # return a list of either fonts or paths
     for fop in OpenSesame.collect():
         f = OpenSesame.getFont(fop, showUI=False)
-        print 'Working on %s...' %OpenSesame.getPath(fop)
+        print('Working on %s...' %OpenSesame.getPath(fop))
         for g in f:
-            print '\tDo something to', g       
+            print('\tDo something to', g)
         #OpenSesame.saveIfUnopened(fop)
         f.close()
-    print 'done'
+    print('done')
